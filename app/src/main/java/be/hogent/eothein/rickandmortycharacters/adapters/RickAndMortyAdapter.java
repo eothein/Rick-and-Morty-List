@@ -2,6 +2,7 @@ package be.hogent.eothein.rickandmortycharacters.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,18 +45,15 @@ public class RickAndMortyAdapter extends RecyclerView.Adapter<RickAndMortyViewHo
         //Inflate the layout, initialize the View Holder
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_layout, parent, false);
         RickAndMortyViewHolder holder = new RickAndMortyViewHolder(v);
+        Log.d(this.getClass().getSimpleName(), "Creating viewholder");
         return holder;
 
     }
 
     @Override
     public void onBindViewHolder(RickAndMortyViewHolder holder, int position) {
-
-        holder.getName().setText(list.get(position).getName());
-        holder.getDescription().setText(list.get(position).getDescription());
-        ImageView characterImage = holder.getCharacterImage();
-        Picasso.with(context).load(list.get(position).getCharacterImage()).resize(400, 400)
-                .centerCrop().into(characterImage);
+        Log.d(this.getClass().getSimpleName(), "Binding position " + position);
+        holder.setData(list.get(position));
     }
 
     @Override

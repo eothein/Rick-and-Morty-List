@@ -62,23 +62,24 @@ public class MainActivityFragment extends Fragment {
     }
 
 
-    private List<RickAndMortyCharacter> generateData(){
+    private List<RickAndMortyCharacter> generateData() {
         List<RickAndMortyCharacter> data = new ArrayList<>();
 
-        RickAndMortyCharacter evilMorty = new RickAndMortyCharacter(R.mipmap.evilmorty,getString(R.string.evilmorty),getString(R.string.evilmortydescription));
+        for (int i = 0; i < 10; i++){
 
-        RickAndMortyCharacter rick = new RickAndMortyCharacter(R.mipmap.ricksanchez,getString(R.string.ricksanchez),
+            RickAndMortyCharacter evilMorty = new RickAndMortyCharacter(R.mipmap.evilmorty, getString(R.string.evilmorty), getString(R.string.evilmortydescription));
+
+        RickAndMortyCharacter rick = new RickAndMortyCharacter(R.mipmap.ricksanchez, getString(R.string.ricksanchez),
                 getString(R.string.rickdescription));
 
-        RickAndMortyCharacter morty = new RickAndMortyCharacter(R.mipmap.morty,getString(R.string.morty),
+        RickAndMortyCharacter morty = new RickAndMortyCharacter(R.mipmap.morty, getString(R.string.morty),
                 getString(R.string.mortydescription));
 
-        RickAndMortyCharacter buthole = new RickAndMortyCharacter(R.mipmap.mrpoopybutthole,getString(R.string.poopy),
+        RickAndMortyCharacter buthole = new RickAndMortyCharacter(R.mipmap.mrpoopybutthole, getString(R.string.poopy),
                 getString(R.string.pooptydescription));
 
-        RickAndMortyCharacter meeseeks = new RickAndMortyCharacter(R.mipmap.meeseeks,getString(R.string.meeseeks),
+        RickAndMortyCharacter meeseeks = new RickAndMortyCharacter(R.mipmap.meeseeks, getString(R.string.meeseeks),
                 getString(R.string.meeseeksdescription));
-
 
 
         data.add(morty);
@@ -86,6 +87,7 @@ public class MainActivityFragment extends Fragment {
         data.add(buthole);
         data.add(meeseeks);
         data.add(evilMorty);
+    }
 
         return data;
     }

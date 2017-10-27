@@ -29,6 +29,7 @@ public class CustomRVItemTouchListener  implements RecyclerView.OnItemTouchListe
                 return true;
             }
 
+            /*
             @Override
             public void onLongPress(MotionEvent e) {
                 //find the long pressed view
@@ -37,6 +38,7 @@ public class CustomRVItemTouchListener  implements RecyclerView.OnItemTouchListe
                     clickListener.onLongClick(child, recyclerView.getChildLayoutPosition(child));
                 }
             }
+            */
         });
     }
 

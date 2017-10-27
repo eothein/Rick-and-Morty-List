@@ -1,12 +1,16 @@
 package be.hogent.eothein.rickandmortycharacters.adapters.ViewHolders;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import be.hogent.eothein.rickandmortycharacters.R;
+import be.hogent.eothein.rickandmortycharacters.models.RickAndMortyCharacter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -35,35 +39,14 @@ public class RickAndMortyViewHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
-    public CardView getCardViewv() {
-        return cv;
-    }
+    public void setData( RickAndMortyCharacter character){
 
-    public void setCardView(CardView cv) {
-        this.cv = cv;
-    }
+        name.setText(character.getName());
+        description.setText(character.getDescription());
+        characterImage.setImageResource(character.getCharacterImage());
+        Context context = characterImage.getContext();
+        Picasso.with(context).load(character.getCharacterImage()).resize(400, 400)
+                .centerCrop().into(characterImage);
 
-    public TextView getName() {
-        return name;
-    }
-
-    public void setName(TextView name) {
-        this.name = name;
-    }
-
-    public TextView getDescription() {
-        return description;
-    }
-
-    public void setDescription(TextView description) {
-        this.description = description;
-    }
-
-    public ImageView getCharacterImage() {
-        return characterImage;
-    }
-
-    public void setCharacterImage(ImageView characterImage) {
-        this.characterImage = characterImage;
     }
 }
